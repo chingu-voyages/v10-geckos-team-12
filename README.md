@@ -70,5 +70,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 =======
 # v10-geckos-team-12
 
+<<<<<<< HEAD
 Split-it app will help organise the expenses that are incurred in a group. 
 >>>>>>> 2cae5836b5eea73eb849c618d5039bba36df8458
+=======
+Split-it app will help organise the expenses that are incurred in a group.
+>>>>>>> fe6b9957e0e3eaf987f05a5aeb69792d6acd52ab
