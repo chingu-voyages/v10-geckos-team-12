@@ -1,2 +1,3 @@
 # v10-geckos-team-12
-Add-project-description-here | Voyage-10 | https://chingu.io/
+
+Split-it app will help organise the expenses that are incurred in a group. 
