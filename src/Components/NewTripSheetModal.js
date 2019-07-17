@@ -9,7 +9,7 @@ class NewTripSheetModal extends React.Component {
   render() {
     return (
       <Modal
-        className="new-trip-modal"
+      className="new-trip-modal"
         isOpen={true}
         contentLabel="Modal for new trip sheet name"
       >
@@ -17,6 +17,7 @@ class NewTripSheetModal extends React.Component {
         <input type="text" id="new-trip" />
         <button>Add trip sheet</button>
       </Modal>
+      
     );
   }
 }

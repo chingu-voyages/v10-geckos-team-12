@@ -37,7 +37,15 @@
   cursor: pointer;
 }
 
+
 .new-trip-modal {
   width: 320px;
-  height: 50px;
+  height: 100vh;
+  background-color: antiquewhite;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%) !important;  
 }
+
+
