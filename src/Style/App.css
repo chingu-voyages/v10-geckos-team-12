@@ -36,3 +36,8 @@
   border-radius: 4px;
   cursor: pointer;
 }
+
+.new-trip-modal {
+  width: 320px;
+  height: 50px;
+}

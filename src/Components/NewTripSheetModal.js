@@ -10,7 +10,7 @@ class NewTripSheetModal extends React.Component {
     return (
       <Modal
         className="new-trip-modal"
-        isOpen={false}
+        isOpen={true}
         contentLabel="Modal for new trip sheet name"
       >
         <label htmlFor="new-trip">Name your trip:</label>
