@@ -1,12 +1,11 @@
 import React from 'react';
 import AddNewTrip from "./AddNewTrip";
 
-const SplitItAppDashBoardPage = () => {
-    return (
+const SplitItAppDashBoardPage = () =>  (
         <div>
             <AddNewTrip />
         </div>
     )
-}
+
 
 export default SplitItAppDashBoardPage;
