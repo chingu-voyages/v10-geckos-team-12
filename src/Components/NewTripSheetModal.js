@@ -14,7 +14,6 @@ function NewTripSheetModal(props) {
         <button onClick={props.closeModal}>Add trip sheet</button>
       </Modal>
   )
-
 }
 
 export default NewTripSheetModal;

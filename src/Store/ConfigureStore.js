@@ -1,10 +1,9 @@
 import { createStore } from 'redux';
+import AppReducer from '../Reducer/AppReducer'
 
-// ADD_NEW_TRIP
-// ADD_NEW_EXPENSE
-// DELETE EXPENSE
+const store = createStore(AppReducer)
 
-const store = createStore()
+console.log(store.getState());
 
 const demoState = {
     trips:[{
