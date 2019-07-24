@@ -5,47 +5,33 @@ import SplitItAppDashBoardPage from "../Components/SplitItAppDashBoardPage";
 import PageNotFound from "../Components/PageNotFound";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { createStore } from "redux";
-import AppReducer from "../Reducer/AppReducer";
+import AppReducer from "../reducer/AppReducer";
+import addNewTrip from "../actions/addNewTrip";
+import deleteTrip from '../actions/deleteTrip';
+import store from '../Store/ConfigureStore';
 import uuid from "uuid";
-
-const store = createStore(AppReducer);
-
-const addNewTrip = ({
-  tripName = "Trip to Anonymous Land",
-  travellers = []
-} = {}) => ({
-  type: "ADD_NEW_TRIP",
-  trip: {
-    tripId: uuid(),
-    tripName,
-    travellers
-  }
-});
-
-const removeTrip = ({ tripId = {} }) => ({
-  type: "REMOVE_TRIP", 
-  tripId
-});
 
 store.subscribe(() => {
   console.log(store.getState());
 });
 
 const LondonTrip = store.dispatch(
-  addNewTrip({ tripName: "London", travellers: ["Mike", "Dustin"] })
+  addNewTrip({
+    tripName: "London",
+    travellers: [{ id: uuid(), name: "Mike" }, { id: uuid(), name: "Dustin" }]
+  })
 );
 
 const ZurichTrip = store.dispatch(
-  addNewTrip({ tripName: "Zurich", travellers: ["Mike", "Eleven"] })
+  addNewTrip({
+    tripName: "Zurich",
+    travellers: [{ id: uuid(), name: "Mike" }, { id: uuid(), name: "Eleven" }]
+  })
 );
 
-console.log(ZurichTrip)
+store.dispatch(deleteTrip({ tripId: ZurichTrip.trip.tripId }));
 
-store.dispatch(removeTrip({tripId: ZurichTrip.trip.tripId}));
-
-store.dispatch(removeTrip({tripId: LondonTrip.trip.tripId}));
-
-
+store.dispatch(deleteTrip({ tripId: LondonTrip.trip.tripId }));
 
 const AppRouter = () => (
   <BrowserRouter>

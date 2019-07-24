@@ -7,7 +7,7 @@ const AppReducer = (state = AppReducerDefaultState, action) => {
             return [...state, 
             action.trip
             ]
-            case "REMOVE_TRIP":
+            case "DELETE_TRIP":
                 return state.filter(({tripId}) => tripId !== action.tripId);
         default:
             return state;
