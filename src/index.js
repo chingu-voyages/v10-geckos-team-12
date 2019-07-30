@@ -6,6 +6,7 @@ import addNewTrip from "./actions/addNewTrip";
 import deleteTrip from "./actions/deleteTrip";
 import store from './Store/ConfigureStore'
 import * as serviceWorker from "./serviceWorker";
+import {Provider} from 'react-redux';
 import uuid from "uuid";
 
 store.subscribe(() => {
@@ -27,10 +28,15 @@ const ZurichTrip = store.dispatch(
 );
 
 store.dispatch(deleteTrip({ tripId: ZurichTrip.trip.tripId }));
-
 store.dispatch(deleteTrip({ tripId: LondonTrip.trip.tripId }));
 
-ReactDOM.render(<AppRouter />, document.getElementById("root"));
+const app = (
+  <Provider store={store}>
+    <AppRouter />
+  </Provider>
+)
+
+ReactDOM.render(app, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

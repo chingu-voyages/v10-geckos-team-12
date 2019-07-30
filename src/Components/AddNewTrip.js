@@ -15,7 +15,8 @@ class AddNewTrip extends React.Component {
   handleNewTrip = () => {
     this.setState(() => ({ isModalOpen: true }));
   };
-  handleCloseModal = () => {
+  handleCloseModal = e => {
+    e.preventDefault();
     this.setState(() => ({ isModalOpen: false }));
   };
   render() {
